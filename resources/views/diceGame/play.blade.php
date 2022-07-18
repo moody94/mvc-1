@@ -18,11 +18,11 @@ $request = request();
                 <p>The player dice sum:</p>
                 <p class="text-dark">{!! $request->session()->get('sumForHands') !!}</p>
 
-                @if (is_int($app->session->get('firstPlayer')))
-                    <p>Player <?= $app->session->get('firstPlayer') ?> will start playing</p>
+                @if (is_int($app->session->get('player1')))
+                    <p>Player <?= $app->session->get('player1') ?> will start playing</p>
                     <br>
                 @else
-                    <?= $request->session()->get('firstPlayer') ?>
+                    <?= $request->session()->get('player1') ?>
                 @endif
 
                 <form method="post">

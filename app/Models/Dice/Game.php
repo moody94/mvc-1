@@ -4,6 +4,7 @@ namespace App\Models\Dice;
 
 class Game
 {
+
     private $thePlayersArr = [];
     private $thePlayersValues = [];
     private $sumForHands = [];
@@ -20,7 +21,7 @@ class Game
     }
 
 
-    public function playersProcess(): array
+    public function processthePlayersArrs()
     {
         $playersNumber = count($this->thePlayersArr);
         for ($i = 0; $i < $playersNumber; $i++) {
@@ -109,7 +110,7 @@ class Game
         $this->startTHeGame = $startTHeGame;
         return $this->startTHeGame;
     }
-    public function checkSumInHand(int $player): bool
+    public function checkSumInHand(int $player)
     {
         if (in_array(1, $this->thePlayersValues[$player - 1])) {
             return true;
@@ -132,10 +133,9 @@ class Game
             if ($player === $AmoundOfPlayer) {
                 $this->startTHeGame = 1;
                 return $this->startTHeGame;
-            } elseif ($player < $AmoundOfPlayer && $player > 0) {
-                $this->startTHeGame = $player + 1;
-                return $this->startTHeGame;
-            } else return false;
+            } elseif ($player !== $AmoundOfPlayer) {
+                return $this->startTHeGame = $player + 1;
+            }
         }
         return false;
     }
@@ -173,7 +173,8 @@ class Game
     {
         if (array_key_exists($player - 1, $this->lastSum)) {
             $this->lastSum[$player - 1] += $this->sumInTheRounds[$player - 1];
-        } else {
+        }
+        if (!array_key_exists($player - 1, $this->lastSum)) {
             $this->lastSum[$player - 1] = $this->sumInTheRounds[$player - 1];
         }
 
@@ -224,17 +225,9 @@ class Game
             }
             return 'visible';
         }
-        return $this->oneWhenSave($player);
-    }
-    public function oneWhenSave(int $player): string
-    {
-        if ($this->checkSumInHand($player) === true) {
-            return 'none';
-        }
-        return 'visible';
     }
 
-    public function playButton(): string
+    public function playButton()
     {
         if (max($this->lastSum) >= 100) {
             return 'none';

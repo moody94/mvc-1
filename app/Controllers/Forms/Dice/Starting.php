@@ -9,13 +9,13 @@ class Starting
 {
     public function process(Request $request)
     {
-        $playersAmount = $request->input('playersAmount');
+        $AmoundOfPlayer = $request->input('AmoundOfPlayer');
         $dicesAmount = $request->input('dicesAmount');
 
-        $game = new Game($playersAmount, $dicesAmount);
+        $game = new Game($AmoundOfPlayer, $dicesAmount);
         $request->session()->put('game', $game);
 
-        $game->playersProcess();
+        $game->processthePlayersArrs();
 
         $playersHands = $game->diceInHandsNum();
         $request->session()->put("playersHands", $playersHands);

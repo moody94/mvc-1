@@ -4,7 +4,6 @@ namespace App\Models\Dice;
 
 class Game
 {
-
     private $thePlayersArr = [];
     private $thePlayersValues = [];
     private $sumForHands = [];
@@ -133,7 +132,7 @@ class Game
             if ($player === $AmoundOfPlayer) {
                 $this->startTHeGame = 1;
                 return $this->startTHeGame;
-            } elseif($player < $AmoundOfPlayer && $player > 0) {
+            } elseif ($player < $AmoundOfPlayer && $player > 0) {
                 $this->startTHeGame = $player + 1;
                 return $this->startTHeGame;
             } else return false;

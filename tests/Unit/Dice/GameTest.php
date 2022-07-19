@@ -29,7 +29,7 @@ class GameTest extends TestCase
 
     public function testdiceInHandsNumReturnString()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $res = $this->game->diceInHandsNum();
 
         $this->assertIsString($res);
@@ -37,7 +37,7 @@ class GameTest extends TestCase
 
     public function testthrowTheDice()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $res = $this->game->diceInHandsNum();
         $this->game->throwTheDice();
         $res1 = $this->game->diceInHandsNum();
@@ -47,7 +47,7 @@ class GameTest extends TestCase
 
     public function testsumForHands()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $res = $this->game->sumForHands();
 
         $this->assertIsString($res);
@@ -55,7 +55,7 @@ class GameTest extends TestCase
 
     public function testplayer1()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $playersHandsSum = $this->game->sumForHands();
         $player1 = $this->game->player1();
 
@@ -72,7 +72,7 @@ class GameTest extends TestCase
 
     public function testplayButtonIsVisible()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $this->game->sumForHands();
         $this->game->sumTheRound(1);
         $this->game->savePlayerResults(1);
@@ -83,7 +83,7 @@ class GameTest extends TestCase
 
     public function testNoWinner()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $this->game->sumForHands();
         $this->game->sumTheRound(1);
         $this->game->savePlayerResults(1);
@@ -112,7 +112,7 @@ class GameTest extends TestCase
 
     public function testdiceInHand()
     {
-        $process = $this->game->processthePlayersArrs();
+        $process = $this->game->playersProcess();
         $res = $this->game->diceInHand(1);
 
         $this->assertIsString($res);
@@ -124,10 +124,10 @@ class GameTest extends TestCase
 
     public function teststartTHeGame()
     {
-        $this->game->processthePlayersArrs();
+        $this->game->playersProcess();
         $this->game->sumForHands();
         $player1 = $this->game->player1();
-        $res = $this->game->startPlayingAgain();
+        $res = $this->game->StartPlayingAgain();
 
         if ($player1 == 'Roll again') {
             $this->assertIsInt($res);

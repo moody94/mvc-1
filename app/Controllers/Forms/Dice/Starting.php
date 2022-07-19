@@ -15,7 +15,7 @@ class Starting
         $game = new Game($amoundOfPlayer, $dicesAmount);
         $request->session()->put('game', $game);
 
-        $game->processthePlayersArrs();
+        $game->playersProcess();
 
         $playersHands = $game->diceInHandsNum();
         $request->session()->put("playersHands", $playersHands);

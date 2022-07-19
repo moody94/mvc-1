@@ -15,9 +15,9 @@ class Game
         $diceGame = new DiceGame();
         if ($play) {
             $game = $request->session()->get("game");
-            $request->session()->put("player1", $game->startPlayingAgain());
+            $request->session()->put("player1", $game->StartPlayingAgain());
             $playerRound = $request->session()->get('player1');
-            $game->processthePlayersArrs();
+            $game->playersProcess();
             $game->throwTheDice();
             $request->session()->put("diceInHand", $game->diceInHand($playerRound));
             $game->sumForHands();

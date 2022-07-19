@@ -3,10 +3,15 @@
 namespace App\Models\Guess;
 
 /**
- * Guess my number, a class supporting the game through GET, POST and SESSION.
+ * Guess my number.
  */
 class GuessGame
 {
+
+    private $number;
+    private $tries;
+
+
 
     public function __construct(int $number = -1, int $tries = 6)
     {
@@ -16,7 +21,6 @@ class GuessGame
         }
         $this->number = $number;
     }
-
 
     public function random(): void
     {
@@ -29,7 +33,6 @@ class GuessGame
     {
         return $this->tries;
     }
-
 
     public function number(): int
     {

@@ -9,17 +9,13 @@ class DiceHandTest extends TestCase
 {
     public int $diceAmount = 2;
 
-    /**
-     * Construct object and verify that the object has the expected
-     * properties. Use only first argument.
-     */
     public function testInitDiceHandClass()
     {
         $diceHand = new DiceHand();
         $this->assertInstanceOf("App\Models\Dice\DiceHand", $diceHand);
     }
 
-    public function testChangeValues()
+    public function testchangeValues()
     {
         $diceHand = new DiceHand($this->diceAmount);
 
@@ -44,7 +40,7 @@ class DiceHandTest extends TestCase
 
         $this->assertCount(2, $values);
 
-        $diceHand->resetValues();
+        $diceHand->ResetValues();
         $values = $diceHand->getValues();
         $this->assertCount(2, $values);
 
@@ -63,7 +59,7 @@ class DiceHandTest extends TestCase
         $this->assertEquals($valueOfSum, $values);
     }
 
-    public function testResettheScoreinHand()
+    public function testtheScoreinHand()
     {
         $diceHand = new DiceHand($this->diceAmount);
 

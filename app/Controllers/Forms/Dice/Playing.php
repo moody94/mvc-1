@@ -24,7 +24,7 @@ class Playing
                 return redirect("/play")->with('amoundOfPlayer', $amoundOfPlayer)->with('dicesAmount', $dicesAmount);
             }
             $playerRound = $request->session()->get('player1');
-            $game->processthePlayersArrs();
+            $game->playersProcess();
             $game->throwTheDice();
             $request->session()->put('diceInHand', $game->diceInHand($playerRound));
             $request->session()->put('saveButton', 'visible');

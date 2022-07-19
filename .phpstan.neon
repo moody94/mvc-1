@@ -1,0 +1,9 @@
+parameters:
+    level: 5
+    paths:
+        - config
+        - app/Models/Dice
+        - app/Controllers/Dice
+        #- test
+    bootstrapFiles:
+        - .phpstan.constants.php

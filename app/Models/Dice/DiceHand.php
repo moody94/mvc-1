@@ -47,7 +47,7 @@ class DiceHand
         return $this->values;
     }
 
-    public function resetValues()
+    public function ResetValues()
     {
         $count = count($this->values);
 

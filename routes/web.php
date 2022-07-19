@@ -47,7 +47,7 @@ Route::post('/play', [Playing::class, 'process'])->name('play');
 
 Route::get('/game', function (Request $request) {
     $game = $request->session()->get("game");
-    $request->session()->put("firstPlayer1", $game->startPlayingAgain());
+    $request->session()->put("firstPlayer1", $game->StartPlayingAgain());
 
     return view('diceGame/game');
 })->name('game');
@@ -83,7 +83,7 @@ Route::get('/fail-guess', function () {
 Route::post('/fail-guess', [Fail::class, 'process'])->name('fail-guess');
 
 
-Route::get('books', [Books::class, 'index'])->name('books');
+Route::get('books',  [Books::class, 'index'])->name('books');
 
 
-Route::get('scores', [DiceGame::class, 'index'])->name('scores');
+Route::get('scores',  [DiceGame::class, 'index'])->name('scores');

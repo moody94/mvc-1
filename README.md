@@ -1,3 +1,27 @@
+
+<!--  -->
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/moody94/mvc-1/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/moody94/mvc-1/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/moody94/mvc-1/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/moody94/mvc-1/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/moody94/mvc-1/badges/build.png?b=main)](https://scrutinizer-ci.com/g/moody94/mvc-1/build-status/main)
+
+
+
+[![CircleCI](https://circleci.com/gh/moody94/mvc-1/tree/main.svg?style=svg)](https://app.circleci.com/pipelines/github/moody94/mvc-1/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

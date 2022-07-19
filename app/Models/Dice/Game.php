@@ -21,7 +21,7 @@ class Game
     }
 
 
-    public function processthePlayersArrs()
+    public function playersProcess(): array
     {
         $playersNumber = count($this->thePlayersArr);
         for ($i = 0; $i < $playersNumber; $i++) {
@@ -110,7 +110,7 @@ class Game
         $this->startTHeGame = $startTHeGame;
         return $this->startTHeGame;
     }
-    public function checkSumInHand(int $player)
+    public function checkSumInHand(int $player): bool
     {
         if (in_array(1, $this->thePlayersValues[$player - 1])) {
             return true;
@@ -129,7 +129,6 @@ class Game
     {
         $amoundOfPlayer = count($this->thePlayersArr);
 
-
         if ($player === $amoundOfPlayer) {
             $this->startTHeGame = 1;
             return $this->startTHeGame;
@@ -141,7 +140,7 @@ class Game
         }
     }
 
-    public function startPlayingAgain()
+    public function StartPlayingAgain()
     {
         return $this->startTHeGame;
     }
@@ -174,8 +173,7 @@ class Game
     {
         if (array_key_exists($player - 1, $this->lastSum)) {
             $this->lastSum[$player - 1] += $this->sumInTheRounds[$player - 1];
-        }
-        if (!array_key_exists($player - 1, $this->lastSum)) {
+        } else {
             $this->lastSum[$player - 1] = $this->sumInTheRounds[$player - 1];
         }
 
@@ -226,9 +224,17 @@ class Game
             }
             return 'visible';
         }
+        return $this->oneWhenSave($player);
+    }
+    public function oneWhenSave(int $player): string
+    {
+        if ($this->checkSumInHand($player) === true) {
+            return 'none';
+        }
+        return 'visible';
     }
 
-    public function playButton()
+    public function playButton(): string
     {
         if (max($this->lastSum) >= 100) {
             return 'none';

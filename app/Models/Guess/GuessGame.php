@@ -3,7 +3,7 @@
 namespace App\Models\Guess;
 
 /**
- * Guess my number
+ * Guess my number, a class supporting the game through GET, POST and SESSION.
  */
 class GuessGame
 {
@@ -24,11 +24,11 @@ class GuessGame
         $this->number = $number;
     }
 
+
     public function tries(): int
     {
         return $this->tries;
     }
-
 
 
     public function number(): int

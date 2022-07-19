@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 use App\Controllers\Forms\Guess\Guesses;
 use App\Controllers\Forms\Guess\Win;
 use App\Controllers\Forms\Guess\Fail;
+use App\Controllers\Tables\Books\Books;
+use App\Controllers\Tables\Dice\DiceGame;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +81,9 @@ Route::get('/fail-guess', function () {
 })->name('fail-guess');
 
 Route::post('/fail-guess', [Fail::class, 'process'])->name('fail-guess');
+
+
+Route::get('books', [Books::class, 'index'])->name('books');
+
+
+Route::get('scores', [DiceGame::class, 'index'])->name('scores');

@@ -9,6 +9,7 @@ class DiceHand
     private $diceAmount = 0;
     private $theScoreinHand = 0;
 
+
     public function __construct(int $diceAmount = 5)
     {
         $this->diceAmount = $diceAmount;

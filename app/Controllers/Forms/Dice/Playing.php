@@ -23,15 +23,15 @@ class Playing
                 $dicesAmount = $request->session()->get('dicesAmount');
                 return redirect("/play")->with('amoundOfPlayer', $amoundOfPlayer)->with('dicesAmount', $dicesAmount);
             }
-            $whoWillPlay = $request->session()->get('player1');
-            $game->playersProcess();
+            $playerRound = $request->session()->get('player1');
+            $game->processthePlayersArrs();
             $game->throwTheDice();
-            $request->session()->put('diceInHand', $game->diceInHand($whoWillPlay));
+            $request->session()->put('diceInHand', $game->diceInHand($playerRound));
             $request->session()->put('saveButton', 'visible');
             $request->session()->put('playButton', 'visible');
             $request->session()->put("sumForHands", $game->sumForHands());
-            $request->session()->put("sumTheRound", $game->sumTheRound($whoWillPlay));
-            $request->session()->put("winner", $game->winner($whoWillPlay));
+            $request->session()->put("sumTheRound", $game->sumTheRound($playerRound));
+            $request->session()->put("winner", $game->winner($playerRound));
             return redirect("/game");
         } elseif ($reset) {
             return redirect("/dice");

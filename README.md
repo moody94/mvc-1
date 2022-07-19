@@ -7,7 +7,7 @@
 
 
 
-[![CircleCI](https://circleci.com/gh/moody94/mvc-1/tree/main.svg?style=svg)](https://app.circleci.com/pipelines/github/moody94/mvc-1/)
+[![CircleCI](https://app.travis-ci.com/moody94/mvc-1.svg?branch=main)](https://app.travis-ci.com/moody94/mvc-1)
 
 
 
@@ -17,7 +17,7 @@
 
 
 
-
+https://app.travis-ci.com/moody94/mvc-1.svg?branch=main
 
 
 

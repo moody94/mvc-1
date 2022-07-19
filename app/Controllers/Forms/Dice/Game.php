@@ -15,7 +15,7 @@ class Game
         $diceGame = new DiceGame();
         if ($play) {
             $game = $request->session()->get("game");
-            $request->session()->put("player1", $game->StartPlayingAgain());
+            $request->session()->put("player1", $game->startPlayingAgain());
             $playerRound = $request->session()->get('player1');
             $game->processthePlayersArrs();
             $game->throwTheDice();

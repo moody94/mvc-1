@@ -18,7 +18,7 @@
                 </label>
 
                 <label>Players:
-                    <input type="number" name="AmoundOfPlayer" min="2" max="5" required class="border">
+                    <input type="number" name="amoundOfPlayer" min="2" max="5" required class="border">
                 </label>
                 <p><input type="submit" value="Play" name="doit" class="btn"></p>
             </form>

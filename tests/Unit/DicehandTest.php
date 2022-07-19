@@ -19,7 +19,7 @@ class DiceHandTest extends TestCase
         $this->assertInstanceOf("App\Models\Dice\DiceHand", $diceHand);
     }
 
-    public function testChangeValuesArray()
+    public function testChangeValues()
     {
         $diceHand = new DiceHand($this->diceAmount);
 
@@ -28,14 +28,14 @@ class DiceHandTest extends TestCase
 
         $this->assertNotEmpty($values);
 
-        $diceHand->changeValuesArray();
+        $diceHand->changeValues();
 
         $values = $diceHand->getValues();
 
         $this->assertEmpty($values);
     }
 
-    public function testResetValuesArray()
+    public function testResetValues()
     {
         $diceHand = new DiceHand($this->diceAmount);
 
@@ -44,14 +44,14 @@ class DiceHandTest extends TestCase
 
         $this->assertCount(2, $values);
 
-        $diceHand->resetValuesArray();
+        $diceHand->resetValues();
         $values = $diceHand->getValues();
         $this->assertCount(2, $values);
 
         $this->assertEquals($values, [0, 0]);
     }
 
-    public function testSumMethod()
+    public function testTheSumMethod()
     {
         $diceHand = new DiceHand($this->diceAmount);
 
@@ -63,17 +63,17 @@ class DiceHandTest extends TestCase
         $this->assertEquals($valueOfSum, $values);
     }
 
-    public function testResetHandScore()
+    public function testResettheScoreinHand()
     {
         $diceHand = new DiceHand($this->diceAmount);
 
         $diceHand->setValues();
 
-        $handScore = $diceHand->sum();
-        $this->assertGreaterThan(0, $handScore);
+        $theScoreinHand = $diceHand->sum();
+        $this->assertGreaterThan(0, $theScoreinHand);
 
-        $resetHandScore = $diceHand->resetHandScore();
+        $resettheScoreinHand = $diceHand->resettheScoreinHand();
 
-        $this->assertEquals(0, $resetHandScore);
+        $this->assertEquals(0, $resettheScoreinHand);
     }
 }

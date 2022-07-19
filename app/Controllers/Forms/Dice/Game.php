@@ -14,7 +14,7 @@ class Game
 
         if ($play) {
             $game = $request->session()->get("game");
-            $request->session()->put("player1", $game->StartPlayingAgain());
+            $request->session()->put("player1", $game->startPlayingAgain());
             $whoWillPlay = $request->session()->get('player1');
             $game->playersProcess();
             $game->throwTheDice();

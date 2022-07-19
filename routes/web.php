@@ -45,7 +45,7 @@ Route::post('/play', [Playing::class, 'process'])->name('play');
 
 Route::get('/game', function (Request $request) {
     $game = $request->session()->get("game");
-    $request->session()->put("firstPlayer1", $game->StartPlayingAgain());
+    $request->session()->put("firstPlayer1", $game->startPlayingAgain());
 
     return view('diceGame/game');
 })->name('game');

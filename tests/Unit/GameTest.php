@@ -93,18 +93,18 @@ class GameTest extends TestCase
         $this->assertEquals('No winner yet!', $noWinner);
     }
 
-    public function testTheNextOne()
+    public function testtheNextOne()
     {
-        $res = $this->game->TheNextOne(2);
+        $res = $this->game->theNextOne(2);
 
         $this->assertEquals(1, $res);
 
-        $res = $this->game->TheNextOne(1);
+        $res = $this->game->theNextOne(1);
 
         $this->assertEquals(2, $res);
 
         $playerOutOfBoundary = 3;
-        $res = $this->game->TheNextOne($playerOutOfBoundary);
+        $res = $this->game->theNextOne($playerOutOfBoundary);
 
         $this->assertFalse($res);
     }
@@ -127,7 +127,7 @@ class GameTest extends TestCase
         $this->game->playersProcess();
         $this->game->sumForHands();
         $player1 = $this->game->player1();
-        $res = $this->game->StartPlayingAgain();
+        $res = $this->game->startPlayingAgain();
 
         if ($player1 == 'Roll again') {
             $this->assertIsInt($res);

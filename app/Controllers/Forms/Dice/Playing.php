@@ -19,9 +19,9 @@ class Playing
                 $request->session()->put('playersHands', $game->diceInHandsNum());
                 $request->session()->put('sumForHands', $game->sumForHands());
                 $request->session()->put('player1', $game->player1());
-                $playersAmount = $request->session()->get('playersAmount');
+                $amoundOfPlayer = $request->session()->get('amoundOfPlayer');
                 $dicesAmount = $request->session()->get('dicesAmount');
-                return redirect("/play")->with('playersAmount', $playersAmount)->with('dicesAmount', $dicesAmount);
+                return redirect("/play")->with('amoundOfPlayer', $amoundOfPlayer)->with('dicesAmount', $dicesAmount);
             }
             $whoWillPlay = $request->session()->get('player1');
             $game->playersProcess();

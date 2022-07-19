@@ -9,10 +9,10 @@ class Starting
 {
     public function process(Request $request)
     {
-        $playersAmount = $request->input('playersAmount');
+        $amoundOfPlayer = $request->input('amoundOfPlayer');
         $dicesAmount = $request->input('dicesAmount');
 
-        $game = new Game($playersAmount, $dicesAmount);
+        $game = new Game($amoundOfPlayer, $dicesAmount);
         $request->session()->put('game', $game);
 
         $game->playersProcess();

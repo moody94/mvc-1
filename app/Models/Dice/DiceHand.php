@@ -7,8 +7,7 @@ class DiceHand
     private $dices = [];
     private $values = [];
     private $diceAmount = 0;
-    private $TheScoreinHand = 0;
-
+    private $theScoreinHand = 0;
 
     public function __construct(int $diceAmount = 5)
     {
@@ -41,7 +40,7 @@ class DiceHand
         return $this->values;
     }
 
-    public function ChangeValues()
+    public function changeValues()
     {
         $this->values = [];
         return $this->values;
@@ -60,15 +59,15 @@ class DiceHand
     public function sum()
     {
         for ($i = 0; $i < $this->diceAmount; $i++) {
-            $this->TheScoreinHand += $this->values[$i];
+            $this->theScoreinHand += $this->values[$i];
         }
         $this->values = [];
-        return $this->TheScoreinHand;
+        return $this->theScoreinHand;
     }
 
-    public function resetTheScoreinHand()
+    public function resettheScoreinHand()
     {
-        $this->TheScoreinHand = 0;
-        return $this->TheScoreinHand;
+        $this->theScoreinHand = 0;
+        return $this->theScoreinHand;
     }
 }

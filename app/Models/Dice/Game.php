@@ -46,9 +46,9 @@ class Game
         $this->sumForHands = [];
 
         for ($i = 0; $i < $playersNumber; $i++) {
-            $this->thePlayersArr[$i]->ChangeValues();
+            $this->thePlayersArr[$i]->changeValues();
             $this->thePlayersArr[$i]->rollHand();
-            $this->thePlayersArr[$i]->resetTheScoreinHand();
+            $this->thePlayersArr[$i]->resettheScoreinHand();
 
             $diceHand = $this->thePlayersArr[$i];
             $diceHand->setValues();
@@ -124,23 +124,23 @@ class Game
         return $diceInHandValues;
     }
 
-    public function TheNextOne(int $player)
+    public function theNextOne(int $player)
     {
-        $AmoundOfPlayer = count($this->thePlayersArr);
+        $amoundOfPlayer = count($this->thePlayersArr);
 
-        if ($player <= $AmoundOfPlayer && $player > 0) {
-            if ($player === $AmoundOfPlayer) {
-                $this->startTHeGame = 1;
-                return $this->startTHeGame;
-            } elseif ($player < $AmoundOfPlayer && $player > 0) {
-                $this->startTHeGame = $player + 1;
-                return $this->startTHeGame;
-            } else return false;
+
+        if ($player === $amoundOfPlayer) {
+            $this->startTHeGame = 1;
+            return $this->startTHeGame;
+        } elseif ($player < $amoundOfPlayer && $player > 0) {
+            $this->startTHeGame = $player + 1;
+            return $this->startTHeGame;
+        } else {
+            return false;
         }
-        return false;
     }
 
-    public function StartPlayingAgain()
+    public function startPlayingAgain()
     {
         return $this->startTHeGame;
     }
@@ -155,7 +155,7 @@ class Game
         if ($this->checkSumInHand($player) === true) {
             $this->sumInTheRounds[$player - 1] = 0;
             $this->sumForHands[$player - 1] = 0;
-            $this->TheNextOne($player);
+            $this->theNextOne($player);
             return $this->sumInTheRounds[$player - 1];
         } else if ($this->checkSumInHand($player) === false) {
             $roundSum += $this->sumForHands[$player - 1];
@@ -177,7 +177,7 @@ class Game
             $this->lastSum[$player - 1] = $this->sumInTheRounds[$player - 1];
         }
 
-        return $this->TheNextOne($player);
+        return $this->theNextOne($player);
     }
 
     public function lastSum()

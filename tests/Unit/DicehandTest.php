@@ -28,7 +28,7 @@ class DiceHandTest extends TestCase
 
         $this->assertNotEmpty($values);
 
-        $diceHand->ChangeValues();
+        $diceHand->changeValues();
 
         $values = $diceHand->getValues();
 
@@ -63,17 +63,17 @@ class DiceHandTest extends TestCase
         $this->assertEquals($valueOfSum, $values);
     }
 
-    public function testResetTheScoreinHand()
+    public function testResettheScoreinHand()
     {
         $diceHand = new DiceHand($this->diceAmount);
 
         $diceHand->setValues();
 
-        $TheScoreinHand = $diceHand->sum();
-        $this->assertGreaterThan(0, $TheScoreinHand);
+        $theScoreinHand = $diceHand->sum();
+        $this->assertGreaterThan(0, $theScoreinHand);
 
-        $resetTheScoreinHand = $diceHand->resetTheScoreinHand();
+        $resettheScoreinHand = $diceHand->resettheScoreinHand();
 
-        $this->assertEquals(0, $resetTheScoreinHand);
+        $this->assertEquals(0, $resettheScoreinHand);
     }
 }

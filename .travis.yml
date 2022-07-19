@@ -2,8 +2,8 @@ language: php
 
 php:
     #- "7.2"
-    - "7.4"
-    - hhvm
+    # - "7.4"
+    # - hhvm
     - nightly
 
 matrix:
@@ -17,10 +17,10 @@ git:
     submodules: false
 
 before_script:
-    - make install
+    - composer install
 
 script:
-    - make test
+    - php artisan test
 
 # notifications:
 #     irc: "irc.freenode.org#dbwebb"

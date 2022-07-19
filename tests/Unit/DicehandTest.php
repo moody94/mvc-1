@@ -35,7 +35,7 @@ class DiceHandTest extends TestCase
         $this->assertEmpty($values);
     }
 
-    public function testresetValues()
+    public function testResetValues()
     {
         $diceHand = new DiceHand($this->diceAmount);
 

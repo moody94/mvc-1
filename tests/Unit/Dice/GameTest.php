@@ -134,4 +134,38 @@ class GameTest extends TestCase
         }
         $this->assertGreaterThan(0, $res);
     }
+
+
+    public function testSaveReturnNone()
+    {
+        $mock = $this->getMockBuilder(\App\Models\Dice\Game::class)
+            ->setConstructorArgs([6, 6])
+            ->onlyMethods(['playersProcess', 'checkSumInHand'])
+            ->getMock();
+
+        $mock->method('playersProcess')->willReturn([[2, 3], [5, 3]]);
+        $mock->method('checkSumInHand')
+            ->with(1)
+            ->willReturn(true);
+
+        $one = $mock->VisibletyBotton(1);
+
+        $this->assertEquals($one, 'none');
+    }
+    public function testSaveReturnVisible()
+    {
+        $mock = $this->getMockBuilder(\App\Models\Dice\Game::class)
+            ->setConstructorArgs([4, 4])
+            ->onlyMethods(['playersProcess', 'checkSumInHand'])
+            ->getMock();
+
+        $mock->method('playersProcess')->willReturn([[2, 4], [3, 1]]);
+        $mock->method('checkSumInHand')
+            ->with(2)
+            ->willReturn(false);
+
+        $one = $mock->VisibletyBotton(2);
+
+        $this->assertEquals($one, 'visible');
+    }
 }

@@ -7,7 +7,7 @@ use App\Models\Dice\DiceNum;
 
 class DiceTest extends TestCase
 {
-    public function testLastRollMethodZero()
+    public function testLastRollZero()
     {
         $dice = new DiceNum(1);
 
@@ -17,7 +17,7 @@ class DiceTest extends TestCase
         $this->assertEquals($lastRoll, $expected);
     }
 
-    public function testLastRollMethod()
+    public function testLastRoll()
     {
         $dice = new DiceNum(1);
 

@@ -207,6 +207,7 @@ class Game
         return 'No winner yet!';
     }
 
+
     public function saveButton(string $case, int $player)
     {
         if ($case == 'save') {
@@ -214,25 +215,20 @@ class Game
                 $this->sumInTheRounds[$player - 1] = 0;
             }
 
-            if ($this->checkSumInHand($player) === true) {
-                return 'none';
-            }
             return 'none';
-        } else if ($case == 'visible') {
-            if ($this->checkSumInHand($player) === true) {
-                return 'none';
-            }
-            return 'visible';
         }
-        return $this->oneWhenSave($player);
+
+        return $this->VisibletyBotton($player);
     }
-    public function oneWhenSave(int $player): string
+
+    public function VisibletyBotton(int $player): string
     {
         if ($this->checkSumInHand($player) === true) {
             return 'none';
         }
         return 'visible';
     }
+
 
     public function playButton(): string
     {
